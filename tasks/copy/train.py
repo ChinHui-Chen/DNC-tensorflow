@@ -62,6 +62,10 @@ if __name__ == '__main__':
         elif opt[0] == '--iterations':
             iterations = int(opt[1])
 
+    config = tf.ConfigProto()
+    config.gpu_options.per_process_gpu_memory_fraction = 0.1
+    #config.gpu_options.per_process_gpu_memory_fraction = 1
+
     graph = tf.Graph()
 
     with graph.as_default():
